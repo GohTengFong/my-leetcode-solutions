@@ -18,7 +18,7 @@ class MyQueue {
     }
     
     public int pop() {
-        while(!mainStack.empty()) {
+        while (!mainStack.empty()) {
             this.tempStack.push(mainStack.pop());
         }
 
