@@ -25,7 +25,7 @@
  */
 class Solution {
   public TreeNode sortedListToBST(ListNode head) {
-    if(head == null) {
+    if (head == null) {
 			return null;
 		} else if (head.next == null) {
 			return new TreeNode(head.val);
