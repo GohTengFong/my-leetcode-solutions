@@ -20,27 +20,22 @@ class Node {
 
 class Solution {
     public Node cloneGraph(Node node) {
-        if (node == null) {
-            return null;
+        return cloneGraphDFSHelper(node, new HashMap<>());
+    }
+
+    private Node cloneGraphDFSHelper(Node cur, HashMap<Node, Node> visited) {
+        if (cur == null) {
+        return null;
+        }
+        if (visited.containsKey(cur)) {
+        return visited.get(cur);
         }
 
-        HashMap<Node, Node> visited = new HashMap<>();
-        Node newNode = new Node(node.val);
-        visited.put(node, newNode);
-        Queue<Node> queue = new LinkedList<>();
-        queue.offer(node);
+        Node newNode = new Node(cur.val);
+        visited.put(cur, newNode);
 
-        while (!queue.isEmpty()) {
-            Node cur = queue.poll();
-
-            List<Node> newNeighbors = visited.get(cur).neighbors;
-            for (Node n : cur.neighbors) {
-                if (!visited.containsKey(n)) {
-                    visited.put(n, new Node(n.val));
-                    queue.offer(n);
-                }
-                newNeighbors.add(visited.get(n));
-            }
+        for (Node n : cur.neighbors) {
+        newNode.neighbors.add(cloneGraphDFSHelper(n, visited));
         }
 
         return newNode;
