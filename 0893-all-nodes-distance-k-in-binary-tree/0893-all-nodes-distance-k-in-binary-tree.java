@@ -21,7 +21,6 @@ class Solution {
 
         if (parentNode != null) {
             adjacentNodes.add(parentNode);
-
         }
 
         if (isLeaf(node)) {
