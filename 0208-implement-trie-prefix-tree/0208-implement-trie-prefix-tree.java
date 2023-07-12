@@ -1,6 +1,5 @@
 class Trie {
-
-        class Node {
+    class Node {
         Node[] nodes;
         boolean isEnd;
 
