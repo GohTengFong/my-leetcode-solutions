@@ -14,7 +14,7 @@ class Trie {
             nodes[i] = new Node();
 	    }
 	
-	    if (idx == word.length()-1) nodes[i].isEnd = true;
+	    if (idx == word.length() - 1) nodes[i].isEnd = true;
 	        nodes[i].insert(word, idx+1);
 		}
 	
