@@ -24,22 +24,14 @@ class Solution {
         while (!frontier1.isEmpty()) {
             int size = frontier1.size();
             Queue<TreeNode> frontier2 = new LinkedList<TreeNode>();
-            int currCount = Integer.MIN_VALUE;
+            int currCount = 0;
             
             for (int i = 0; i < size; i++) {
                 TreeNode currNode = frontier1.poll();
+                currCount += currNode.val;
 
-                if (currNode != null) {
-                    if (currCount == Integer.MIN_VALUE) {
-                        currCount = 0;
-                        currCount += currNode.val;
-                    } else {
-                        currCount += currNode.val;
-                    }
-
-                    frontier2.add(currNode.left);
-                    frontier2.add(currNode.right);
-                }
+                if (currNode.left != null) frontier2.add(currNode.left);
+                if (currNode.right != null) frontier2.add(currNode.right);
             }
 
             if (currCount > currMax) {
