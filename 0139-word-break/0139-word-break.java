@@ -1,24 +1,21 @@
 class Solution {
     public boolean wordBreak(String s, List<String> wordDict) {
-        if (s == null || s.length() == 0) return false;
+        Set<String> dict = new HashSet<String>();
+        for (int i = 0; i < wordDict.size(); i++) {
+            dict.add(wordDict.get(i));
+        }
 
-        HashSet<String> dict = new HashSet<String>();
-        for (String word : wordDict) dict.add(word);
+        boolean[] dp = new boolean[s.length() + 1];
+        dp[0] = true;
 
-        // stores whether or not workBreak is possible for the substring starting at index i
-        boolean[] dp = new boolean[s.length()];
-        
-        for (int i = 0; i < s.length(); i++) {
-            for (int j = 0; j <= i; j++) {
-                String sub = s.substring(j, i + 1);
-            
-                if (dict.contains(sub) && (j == 0 || dp[j - 1])) {
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = 0; j < i; j++) {
+                if (dp[j] && dict.contains(s.substring(j, i))) {
                     dp[i] = true;
-                    break;
                 }
             }
         }
-        
-        return dp[s.length() - 1];
+
+        return dp[s.length()];
     }
 }
