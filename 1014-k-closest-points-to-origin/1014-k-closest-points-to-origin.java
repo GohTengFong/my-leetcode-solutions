@@ -4,7 +4,6 @@ class Solution {
     }
 
     public int[][] kClosest(int[][] points, int k) {
-        
         PriorityQueue<int[]> minHeap = new PriorityQueue<int[]>((p1, p2) -> getDistance(p1).compareTo(getDistance(p2)));
         
         for (int[] point : points) minHeap.add(point);
