@@ -28,7 +28,6 @@ class Solution {
         double weight = -1.0;
         for (Map.Entry<String, Double> entry : graph.get(from).entrySet()) {
             if (!visited.contains(entry.getKey())) {
-
                 weight = dfs(graph, entry.getKey(), to, visited);
 
                 if (weight != -1.0) return entry.getValue() * weight;
