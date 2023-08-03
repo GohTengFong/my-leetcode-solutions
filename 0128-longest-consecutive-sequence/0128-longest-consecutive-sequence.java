@@ -14,7 +14,7 @@ class Solution {
             // looking to the left of num
             while (set.contains(currNum)) {
                 currCount++;
-                set.remove(currNum);
+                set.remove(currNum); // to prevent looking at the same consecutive sequence
                 currNum--;
             }
 
