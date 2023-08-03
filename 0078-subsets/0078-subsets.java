@@ -7,7 +7,6 @@ class Solution {
             dfs(i + 1, nums, answer, currList);
             currList.remove(currList.size() - 1);
         }
-
     }
 
     public List<List<Integer>> subsets(int[] nums) {
