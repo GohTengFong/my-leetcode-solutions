@@ -51,16 +51,3 @@ class Solution {
         return answer;
     }
 }
-
-/*
-
-1,4 2,3 8,10 5,8
-
-2,3 1,4 5,8 8,10
-
-compare if a[1] >= b[0]
-if yes -> take[min, max]
-if no -> add a to answer
-
-
-*/
