@@ -42,11 +42,14 @@ class Solution {
 
                 List<Node> newNeighbours = visited.get(currNode).neighbors;
                 for (Node currNeighbour : currNeighbours) {
+                    // check if hashmap contains the old Node, new Node pair
+                    // also serves as a visited check (does not add currNeighbour to frontier2 if the mapping exists)
                     if (!visited.containsKey(currNeighbour)) {
-                        visited.put(currNeighbour, new Node(currNeighbour.val));
+                        visited.put(currNeighbour, new Node(currNeighbour.val, new ArrayList<Node>()));
                         frontier2.offer(currNeighbour);
                     }
 
+                    // add currNeighbour to newNeighbours regardless of visited or not since it is an undirected graph
                     newNeighbours.add(visited.get(currNeighbour));
                 }
             }
