@@ -52,14 +52,3 @@ class Solution {
         }
     }
 }
-
-/*
-0 - dead
-1 - live
-
-
-1. if 1 has <2 1 neigbours, it becomes 0
-2. if 1 has 2 or 3 1 neighbours, it remains as 1
-3. if 1 has >3 1 neigbours, it becomes 0
-4. if 0 has 3 1 neigbours, it becomes 1
-*/
