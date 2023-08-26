@@ -26,8 +26,6 @@ class Solution {
         res += getSum(root.left, targetSum, sum);
         res += getSum(root.right, targetSum, sum);
         
-        sum -= root.val;
-        
         return res;
     }
 
