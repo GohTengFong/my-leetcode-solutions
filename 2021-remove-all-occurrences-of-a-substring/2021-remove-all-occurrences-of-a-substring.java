@@ -8,7 +8,6 @@ class Solution {
         while (i + windowSize <= sb.length()) {
             if (sb.substring(i, windowSize + i).equals(part)) {
                 sb.delete(i, windowSize + i);
-                System.out.println(sb.toString());
                 i = 0;
             } else {
                 i++;
