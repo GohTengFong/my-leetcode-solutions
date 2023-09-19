@@ -41,9 +41,13 @@ class Solution {
 /*
 
 Idea :
-- find the pivot where the subarray to the right of this pivot is a non-increasing subarray
-- starting from the end of nums, find the successor of nums[pivot]
-- swap nums[pivot] and nums[successor]
-- reverse the entire non-increasing subarray
+- need to find the rightmost number that can be increased
+- this allows us to find the next permutation with the smallest lexicographical increment
+- find the pivot where the subarray to the right of this pivot is a non-increasing subarray (suffix)
+  - non-increasing subarray means that it cannot be increased any further
+  - if pivot == -1, the entire array is non-increasing, return the smallest lexicograpical permutation
+- by swapping nums[pivot] with the smallest element in the suffix greater than it, it will increase the left subarray (prefix) by the smallest lexicographical increment
+- since the prefix has been increased, the suffix must be made as low as possible
+  - reverse the suffix
 
 */
