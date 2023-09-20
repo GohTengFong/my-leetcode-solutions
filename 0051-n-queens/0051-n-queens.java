@@ -66,7 +66,7 @@ class Solution {
         }
 
         return true;
-  }
+    }
 
     private void dfs(ArrayList<List<String>> answer, int remainingQ, int[][] board, int row) {
         if (remainingQ == 0) { // found a possible solution, add it to answer
