@@ -22,3 +22,16 @@ class Solution {
         return answer;
     }
 }
+
+/*
+
+Idea :
+- maintain a set
+- iterate through num : nums
+- keep exploring until there is a duplicate in set
+  - if there is a duplicate, it means there is a cycle
+  - note that all other elements in this cycle would result in the same cycle and the same longest length
+- continue to the next iteration
+- do not explore if set contains num since it is a cycle that has been explored already
+
+*/
