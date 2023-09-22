@@ -4,9 +4,7 @@ class Solution {
         divisors.add(1);
         divisors.add(num);
         
-        for (int i = 2; i <= Math.sqrt(num); i++) {
-            if (divisors.contains(i)) continue;
-            
+        for (int i = 2; i <= Math.sqrt(num); i++) {            
             if (num % i == 0) {
                 int otherDivisor = num / i;
 
