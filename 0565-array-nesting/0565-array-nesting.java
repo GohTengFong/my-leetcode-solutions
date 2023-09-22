@@ -4,6 +4,8 @@ class Solution {
         int answer = 0;
 
         for (int i = 0; i < nums.length; i++) {
+            if (seen.contains(i)) continue;
+            
             seen.add(i);
             int count = 1;
 
