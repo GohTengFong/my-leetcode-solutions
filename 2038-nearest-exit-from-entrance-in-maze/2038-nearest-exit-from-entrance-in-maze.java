@@ -3,7 +3,7 @@ class Solution {
         int rows = maze.length;
         int columns = maze[0].length;
             
-        int[][] directions = new int[][] {{0,1}, {0,-1}, {1,0}, {-1,0}};
+        int[][] directions = new int[][] {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
         Queue<int[]> queue = new LinkedList<int[]>();
         queue.offer(entrance);
         maze[entrance[0]][entrance[1]] = '+';
