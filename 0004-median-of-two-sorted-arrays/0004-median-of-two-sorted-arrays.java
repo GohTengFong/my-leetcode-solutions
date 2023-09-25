@@ -36,8 +36,6 @@ class Solution {
         int[] combined = new int[length];
         combineArrays(nums1, nums2, combined);
 
-        System.out.println(Arrays.toString(combined));
-
         if (combined.length % 2 == 0) {
             int right = length / 2;
             int left = right - 1;
