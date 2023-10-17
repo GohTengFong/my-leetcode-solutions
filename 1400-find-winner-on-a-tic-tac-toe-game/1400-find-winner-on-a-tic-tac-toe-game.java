@@ -2,7 +2,7 @@ class Solution {
     private int checkWinner(int[][] board) {
         int winner = -1;
         
-        // check row
+        // check col
         for (int row = 0; row < board.length; row++) {
             int col1 = board[row][0];
             int col2 = board[row][1];
@@ -11,7 +11,7 @@ class Solution {
             if (col1 == col2 && col2 == col3) winner = col1;
         }
 
-        // check col
+        // check row
         for (int col = 0; col < board[0].length; col++) {
             int row1 = board[0][col];
             int row2 = board[1][col];
