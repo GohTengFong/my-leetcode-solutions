@@ -2,7 +2,7 @@ class Solution {
     private int groupify(HashMap<Integer, Integer> freqMap, int size) {
         int groups = 0;
         
-        for(int freq : freqMap.values()) {
+        for (int freq : freqMap.values()) {
             int numGroups = freq / (size + 1);
             int remainder = freq % (size + 1);
 
