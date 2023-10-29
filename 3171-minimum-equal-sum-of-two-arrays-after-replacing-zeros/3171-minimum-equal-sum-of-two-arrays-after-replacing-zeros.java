@@ -29,3 +29,15 @@ class Solution {
         return Math.max(sum1, sum2);
     }
 }
+
+/*
+
+Idea :
+- find the minimum sum of both arrays
+- find the number of zeros of both arrays
+- if (sum1 < sum2 && zero1 == 0), that means that sum1 can never sum to sum2, return -1
+- if (sum1 > sum2 && zero2 == 0), that means that sum2 can never sum to sum1, return -1
+- return the maximum of both minimum sums
+	- cannot return minimum since 0s can only be replaced by positive integers
+
+*/
