@@ -17,27 +17,32 @@ class Solution {
                 String employee = entry.get(0);
                 String accessTime = entry.get(1);
                 
-                if (employee.equals(currEmployee)) {
+                if (employee.equals(currEmployee)) { // same employee accessed
                     int firstAccessInt = Integer.parseInt(firstAccess);
                     int accessTimeInt = Integer.parseInt(accessTime);
                     
                     if (accessTimeInt - firstAccessInt < 100) {
                         accessCount++;
                     } else {
-                        if (accessCount >= 3) {
-                            if (!answer.contains(currEmployee)) answer.add(currEmployee);
-                        } else {
+                        if (accessCount >= 3) { // currEmployee is high-access
+                            if (!answer.contains(currEmployee)) {
+                                answer.add(currEmployee);
+
+                                i = j - 1;
+                                break;
+                            }
+                        } else { // currEmployee is not high-access when the current access time is used as firstAccess, need to consider his next access time as firstAccess
                             break;
                         }
                     }
-                } else {
+                } else { // different employee accessed, check if previous employee is high-access
                     if (accessCount >= 3 && !answer.contains(currEmployee)) answer.add(currEmployee);
                 
-                    i = j - 1;
+                    i = j - 1; // to shift i past all previous employee's accesses
                     break;
                 }
                 
-                if (j == access_times.size() - 1 && accessCount >= 3 && !answer.contains(currEmployee)) answer.add(currEmployee);   
+                if (j == access_times.size() - 1 && accessCount >= 3 && !answer.contains(currEmployee)) answer.add(currEmployee); // accounting for last employee
             }
         }
         
